@@ -313,3 +313,129 @@ h2 {
 .brand-img-__riotinto {
     margin-left: 64px;
 }
+
+/* services */
+.services {
+    margin-top: 106px;
+}
+
+.services-row {
+    display: flex;
+    justify-content: space-between;
+}
+.services-label::before {
+    position: relative;
+    top: -1rem;
+    margin-right: 21px;
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 1px;
+    background: var(--primary-color);
+}
+
+.services-label {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.62;
+    color: var(--primary-color);
+}
+
+.services-title {
+    position: relative;
+    margin-top: 12px;
+    width: 520px;
+}
+
+.services-title::after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background: var(--primary-color);
+    width: 66px;
+    height: 2px;
+    top: 83px;
+    right: 103px;
+}
+
+.arrow-group {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 17px;
+    flex-direction: row-reverse;
+    bottom: 9px;
+    right: 73px;
+}
+
+.arrow-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: #e2eddf;
+    border-radius: 50%;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.arrow-block:hover {
+    background: #143c3c;
+    color: #ffffff;
+}
+
+.services-group {
+    margin-top: 76px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.services-item:hover {
+    background: #ffffff;
+    box-shadow: -6px 9px 64px -4px rgba(118, 118, 118, 0.25);
+    border-radius: 20px;
+}
+
+.services-item:hover .services-group__info {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 64px;
+    transition: 0.5s;
+}
+
+.services-group__img {
+    width: 370px;
+    height: 318px;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+}
+
+.services-group__info {
+    padding: 24px 101px 15px 0;
+}
+
+.services-group__title {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.services-group__desc {
+    margin-top: 18px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.71;
+    color: #7d8188;
+}
