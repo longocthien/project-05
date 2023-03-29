@@ -99,17 +99,21 @@
         <header class="header">
             <div class="container header-bottom">
                 <div class="container-row">
-                    <a href="#!">
+                    <a href="#">
                         <img src="./assets/img/logo.svg" alt="logo" />
                     </a>
                     <nav>
                         <ul class="nav-group">
                             <li>
-                                <a class="nav-item" href="#1">Home</a>
+                                <a class="nav-item active visible" href="#"
+                                    >Home</a
+                                >
                             </li>
-                            <li><a class="nav-item" href="#1">About</a></li>
-                            <li><a class="nav-item" href="#1">Blog</a></li>
-                            <li><a class="nav-item" href="#1">Contact</a></li>
+                            <li><a class="nav-item" href="#about">About</a></li>
+                            <li><a class="nav-item" href="#blog">Blog</a></li>
+                            <li>
+                                <a class="nav-item" href="#contact">Contact</a>
+                            </li>
                         </ul>
                     </nav>
                     <a href="#!" class="sign-up__btn btn">Sign Up</a>
@@ -367,7 +371,7 @@
             </section>
             <!-- about -->
             <section>
-                <div class="about">
+                <div class="about" id="about">
                     <div class="container">
                         <div class="about-container">
                             <figure class="about-img__group">
@@ -721,7 +725,7 @@
             </section>
             <!-- articles -->
             <section>
-                <div class="articles">
+                <div class="articles" id="blog">
                     <div class="container">
                         <div class="strikethrough__block">
                             <div class="strikethrough-before"></div>
@@ -808,7 +812,7 @@
                 </div>
             </section>
         </main>
-        <footer class="footer">
+        <footer class="footer" id="contact">
             <div class="container">
                 <div class="footer-row">
                     <div class="footer-info">
@@ -1047,6 +1051,7 @@
         </footer>
     </body>
     <script>
+        // video
         const video = document.querySelector('.video');
         const playBtn = document.querySelector('.play-btn');
         const videoBlock = document.querySelector('.video-block');
@@ -1067,5 +1072,43 @@
 
         videoBlock.addEventListener('click', playVideo);
         video.addEventListener('ended', showPlayBtn);
+
+        // header-active
+        const navs = document.querySelectorAll('.nav-item');
+
+        navs.forEach((nav) => {
+            nav.onclick = function () {
+                const itemActive = document.querySelector('.nav-item.active');
+                itemActive.classList.remove('active');
+                this.classList.add('active');
+            };
+        });
+
+        // header
+
+        const header = document.querySelector('.header');
+        const body = document.querySelector('body');
+
+        const itemVisible = document.querySelector('.nav-item.visible');
+
+        function handleMouseMove(event) {
+            const headerRect = header.getBoundingClientRect();
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            if (
+                mouseX >= headerRect.left &&
+                mouseX <= headerRect.right &&
+                mouseY >= headerRect.top &&
+                mouseY <= headerRect.bottom
+            ) {
+                itemVisible.classList.remove('visible');
+                header.classList.add('visible');
+            } else {
+                header.classList.remove('visible');
+            }
+        }
+
+        document.addEventListener('mousemove', handleMouseMove);
     </script>
 </html>
