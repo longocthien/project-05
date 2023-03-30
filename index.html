@@ -100,12 +100,16 @@
             <div class="container header-bottom">
                 <div class="container-row">
                     <a href="#">
-                        <img src="./assets/img/logo.svg" alt="logo" />
+                        <img
+                            class="img-logo"
+                            src="./assets/img/logo.svg"
+                            alt="logo"
+                        />
                     </a>
                     <nav>
                         <ul class="nav-group">
                             <li>
-                                <a class="nav-item active visible" href="#"
+                                <a class="nav-item active visible home" href="#"
                                     >Home</a
                                 >
                             </li>
@@ -1080,6 +1084,8 @@
 
         // header-active
         const navs = document.querySelectorAll('.nav-item');
+        const logo = document.querySelector('.img-logo');
+        const home = document.querySelector('.home');
 
         navs.forEach((nav) => {
             nav.onclick = function () {
@@ -1088,6 +1094,12 @@
                 this.classList.add('active');
             };
         });
+
+        logo.onclick = function () {
+            const itemActive = document.querySelector('.nav-item.active');
+            itemActive.classList.remove('active');
+            home.classList.add('active');
+        };
 
         // header
 
